@@ -1,0 +1,118 @@
+.sidebar {
+  flex: 1;
+  min-height: 100vh;
+  border-right: 1px solid #f2eaea;
+  background-color: white;
+
+  .top {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #6439ff;
+    }
+  }
+
+  hr {
+    height: 0;
+    border: 0.5px solid rgb(230, 227, 227);
+  }
+
+  .center {
+    padding-left: 10px;
+    padding-top: 10px;
+
+    ul {
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .profile_pic{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+
+      }
+
+      .details{
+        padding-left: 15px;
+
+        h1{
+          // padding-right: 20px;
+          color: #353140;
+          font-size: 2.5rem;
+        }
+        sub,i{
+          font-size: 20px;
+          color:#464156;
+          font-style: italic;
+        } 
+        i{
+          font-size: 15px;
+        }
+      } 
+
+
+      .title {
+        font-size: 17px;
+        font-weight: bold;
+        color: #999;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #ece8ff;
+        }
+
+        .icon {
+          font-size: 22px;
+          color: #7451f8;
+        }
+
+        span{
+            font-size: 18px;
+            font-weight: 600;
+            color: #888;
+            margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .bottom{
+      display: flex;
+      align-items: center;
+      margin: 10px;
+
+      .colorOption{
+          width: 20px;
+          height: 20px;
+          border-radius: 5px;
+          border: 1px solid #7451f8;
+          cursor: pointer;
+          margin: 5px;
+
+          &:nth-child(1){
+              background-color: whitesmoke;
+          }
+          &:nth-child(2){
+              background-color: #333;
+          }
+          &:nth-child(3){
+              background-color: darkblue;
+          }
+      }
+  }
+}

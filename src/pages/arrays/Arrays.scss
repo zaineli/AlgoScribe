@@ -1,0 +1,29 @@
+.visualize {
+    display: flex;
+  
+    .homeContainer {
+      flex: 6;
+      .grid{
+        width: 50%;
+        display: grid;
+        height: 80%;
+        align-items:center;
+        grid-template-columns: repeat(2, 1fr) ;// Defines two columns of equal width
+        grid-gap: 100px ;// Optional: sets spacing between grid items
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .item{
+        width: 100%;
+        height: 70%;
+        padding: 10px;
+        border: 1px solid #ddd;
+ /* centers regardless of margin/padding */
+          }
+      }
+     
+    }
+  
+}

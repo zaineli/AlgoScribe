@@ -1,0 +1,47 @@
+.controlls {
+  padding: 0.5rem;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #353A3D;
+  box-shadow: 0 0 5px 0;
+  /* border-top-right-radius: 0.75rem; */
+  /* border-bottom-right-radius: 0.75rem; */
+  border-right: 2px solid #555;
+  padding-left: 1rem;
+
+}
+
+.title{
+  font-size: 2rem;
+  color: rgb(235, 226, 244);
+  font-weight: 800;
+
+}
+
+.controlls button {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.15s ease;
+  color: rgb(47, 156, 239);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  &:hover {
+    /* scale: 1.02; */
+    /* translate: 0; */
+    color: rgb(28, 102, 192);
+  }
+}
+
+#run{
+  color: greenyellow;
+
+  &:hover{
+    color: green;
+  }
+}

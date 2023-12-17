@@ -1,0 +1,54 @@
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #333;
+  color: white;
+  padding: .5rem;
+  overflow: hidden;
+  width: 50%;
+  min-height: 92%;
+}
+
+.editor {
+  flex: 1;
+  max-width: 100%;
+
+  /* overflow: hidden; */
+}
+
+.editor-wrapper {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+
+
+}
+
+.editor ::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.75em;
+  height: 0.75em;
+  padding-block: 1em;
+}
+
+.editor ::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 1rem;
+  width: 1em;
+}
+
+.editor * {
+  outline: none !important;
+}
+
+.filename {
+  background: #2e3235;
+  border-bottom: 2px solid #555;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}

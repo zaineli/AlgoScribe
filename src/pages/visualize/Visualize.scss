@@ -1,0 +1,48 @@
+.visualize {
+    display: flex;
+  
+    .homeContainer {
+      flex: 6;
+      .grid{
+        width: 50%;
+        display: grid;
+        height: 80%;
+        align-items:center;
+        grid-template-columns: repeat(2, 1fr) ;// Defines two columns of equal width
+        grid-gap: 100px ;// Optional: sets spacing between grid items
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .item{
+        width: 100%;
+        height: 70%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-decoration-line: none;
+        font-size: 2rem;
+        color:#ddd;
+ /* centers regardless of margin/padding */
+
+          }
+
+          .trees{
+            background-image: url("https://media.istockphoto.com/id/972568996/vector/printed-circuit-like-gold-tree.jpg?s=612x612&w=0&k=20&c=p-DYq69HnqmiGpnJkQUFhk6s47RRGGPfIg6YrRExMO0=");
+            background-position: center;
+          }
+
+          .graphs{
+            background-image: url("https://miro.medium.com/v2/resize:fit:1358/1*-y3IgLZAAX82gStWe1-r_A.jpeg");
+            background-position: cover;
+          }
+
+          .arrays{
+            background-image: url("https://miro.medium.com/v2/resize:fit:1358/1*plaTqL5DDa2MgqeK-0EClg.png");
+            background-position: cover;
+          }
+      }
+     
+    }
+  
+}
