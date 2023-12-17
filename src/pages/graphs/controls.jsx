@@ -9,7 +9,7 @@ import { run_astar, run_bfs, run_dfs, run_dijk } from './algorithms';
 
 
 const Controls = ({selected, setSelected, run, startCell, targetCell}) => {
-  const [isOpen, setIsOpen] = useState();
+  const [isOpen, setIsOpen] = useState(false);
   const [algo, setAlog] = useState("");
 
   console.log({algo}, algo.length>0)
@@ -47,7 +47,7 @@ const Controls = ({selected, setSelected, run, startCell, targetCell}) => {
               setAlog("Depth-First Search")
               setIsOpen(false);
             }} >
-              Deepth-First Search
+              Depth-First Search
             </div>
             <div className={style.option} onClick={() => {
               setAlog("Breath First Search")
