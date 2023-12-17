@@ -29,8 +29,28 @@
           align-items:center;
           gap: 20px;
 
+          .new-file {
+            display: flex;
+            gap: 2rem;
+          }
+
+          label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+          }
+          
+          input[type="text"],label  {
+            width: 20rem;
+            font-size: inherit;
+            border: 1px solid #555;
+            border-radius: 1rem;
+            outline:none;
+            padding-left: 0.5rem;
+          }
+
           button{
-            
+            width: 8rem;
             display: inline-block;
             outline: none;
             cursor: pointer;
@@ -47,12 +67,13 @@
                 background-color: #f4f6f9; 
             } 
 
-            input{
-              color: #0070d2;
-              font-size: 15px;
-              
-            }
-        
+            
+          }
+          input[type="file"]{
+            display: none;
+            color: #0070d2;
+            font-size: 15px;
+            
           }
 
           .upload{

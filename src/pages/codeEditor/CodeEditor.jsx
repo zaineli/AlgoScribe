@@ -78,8 +78,8 @@ const CodeEditor = () => {
     ? ` 
       <html>
         <body>
+        <div class='lines'></div>
           <div id="app"></div>
-          <div class='lines'></div>
         </body>
         <style>${helperScripts[0]}</style>
         <style>${helperScripts[1]}</style>

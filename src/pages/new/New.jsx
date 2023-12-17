@@ -20,14 +20,14 @@ const New = ({ inputs, title }) => {
     e.preventDefault();
     try {
       await setDoc(doc(db, "files"), {
-        ...data,
+        ...[],
         timeStamp: serverTimestamp(),
       });
     } 
     catch (error) {
       console.log(error);
     }
-  };  
+  };
 
   const [imageUpload, setImageUpload] = useState(null)
   const [imageList, setImageList] = useState([])
@@ -41,7 +41,7 @@ const New = ({ inputs, title }) => {
           console.log(user);
           if (!imageUpload) return;
   
-          let file_name = prompt("Enter File Name")
+          let file_name = imageUpload.name;
           setName(file_name)
           
           const imageRef = ref(storage, `${uid}/${file_name}`);
@@ -60,8 +60,32 @@ const New = ({ inputs, title }) => {
     
   };
 
-  const [data, setData] = useState([]);
+  const [filename, setFilename] = useState("");
   
+  function createNewFile() {
+    const auth = getAuth();
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const uid = user.uid;
+          
+            const imageRef2 = ref(storage, `${uid}/${filename}`);
+            try {
+              const snapshot = await uploadBytes(
+                imageRef2,
+                new Blob([`This is '${filename}' file`], { type: "text/js" })
+              );
+            console.log("check snapshot")
+            console.log(snapshot);
+            } catch (error) {
+              console.error("Error uploading File:", error);
+            }
+            setFilename("");
+            console.log("BHai bn gya dekh le")
+
+        }
+      });
+  }
+
   // useEffect(() => {
   //   const auth = getAuth();
   //   onAuthStateChanged(auth, async (user) => {
@@ -83,6 +107,8 @@ const New = ({ inputs, title }) => {
   //     }
   //   });
   // }, []);
+
+  console.log({imageUpload})
 
   return ( 
     <div className="new">
@@ -115,9 +141,20 @@ const New = ({ inputs, title }) => {
       <div className="main">
         <div className="wrapper">
           <div className="uploadfile">
-            <button ><input type="file"  onChange={(e)=>{setImageUpload(e.target.files[0])}}/></button>           
+            <div className="new-file">
 
-            <button className="upload" onClick={uploadImage}>Upload Image</button>
+              <label htmlFor="file">
+                {imageUpload?imageUpload.name : "Select a file"}
+              </label>
+              <input id="file" type="file" onChange={(e)=>{setImageUpload(e.target.files[0])}}/>           
+              <button className="upload" onClick={uploadImage}>Upload File</button>
+            </div>
+            <span>OR</span>
+            <div className="new-file">
+                <input value={filename} onChange={e => setFilename(e.target.value)}
+                 className="" type="text" placeholder="Create A New File" />
+                <button onClick={createNewFile} className="upload">Create</button>
+            </div>
           </div>
         </div>
         <Datatable/>

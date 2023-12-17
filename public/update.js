@@ -220,7 +220,7 @@ function render(root, div = document.getElementById("app")) {
   childrenDiv.appendChild(leftDiv);
   childrenDiv.appendChild(rightDiv);
 
-  linesDiv.innerHTML = "";
+  // linesDiv.innerHTML = "";
   // console.log({ nodeDiv });
   setTimeout(() => {
     drawLines(nodeDiv);
