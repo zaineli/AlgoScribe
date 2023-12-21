@@ -1,0 +1,62 @@
+.controls {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    /* height: 2rem; */
+    background: #333;
+    gap: 1rem;
+}
+
+.controls > * {
+    height: 100%;
+    border: none;
+    font-size: 1.2rem;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    background: inherit;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background: #555;
+    }
+}
+
+button {
+    font-family: inherit;
+    outline: none;
+}
+
+.menu {
+    max-height: 100%;
+    height: inherit;
+    position: relative;
+    user-select: none;
+}
+
+.menu span {
+    font-size: inherit;
+}
+
+.options {
+    z-index: 100;
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 0;
+    width: max-content;
+    background: #333;
+    padding-block: 0.5rem;
+    border-radius: 0.5rem;
+    transform-origin: 33% 0%;
+    transition: all 0.15s ease-out;
+}
+
+.option {
+    padding-block: 0.25rem;
+    padding-inline: 1rem;
+    
+    &:hover {
+        background: #555;
+    }
+    /* position: absolute; */
+}

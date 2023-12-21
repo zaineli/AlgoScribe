@@ -36,10 +36,10 @@ const CodeEditor = () => {
   useEffect(() => {
     (async () => {
       const res = await Promise.all([
-        fetch("http://localhost:3000/style.css"),
-        fetch("http://localhost:3000/style.lib.css"),
-        fetch("http://localhost:3000/update.js"),
-        fetch("http://localhost:3000/watch.js"),
+        fetch("https://abbas--algoscribex.netlify.app/style.css"),
+        fetch("https://abbas--algoscribex.netlify.app/style.lib.css"),
+        fetch("https://abbas--algoscribex.netlify.app/update.js"),
+        fetch("https://abbas--algoscribex.netlify.app/watch.js"),
       ]);
       const datas = await Promise.all(res.map((r) => r.text()));
       setHelperScripts(datas);
@@ -78,8 +78,8 @@ const CodeEditor = () => {
     ? ` 
       <html>
         <body>
+        <div class='lines'></div>
           <div id="app"></div>
-          <div class='lines'></div>
         </body>
         <style>${helperScripts[0]}</style>
         <style>${helperScripts[1]}</style>
