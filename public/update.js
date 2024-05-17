@@ -217,9 +217,10 @@ function render(root, div = document.getElementById("app")) {
   div.appendChild(nodeDiv);
   nodeDiv.appendChild(valueDiv);
   nodeDiv.appendChild(childrenDiv);
+  if (root.left) 
   childrenDiv.appendChild(leftDiv);
+  if (root.right) 
   childrenDiv.appendChild(rightDiv);
-
   // linesDiv.innerHTML = "";
   // console.log({ nodeDiv });
   setTimeout(() => {

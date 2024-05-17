@@ -18,7 +18,23 @@ import "./App.css";
 const CodeEditor = () => {
   const [params, setParams] = useSearchParams();
   const iFrameRef = useRef();
-  const [script, setScript] = useState("");
+  const [script, setScript] = useState(`
+  const tree = {
+    value: 30,
+    left: {
+      value: 11,
+    left: {
+  value: 30,
+  left: {
+    value: 11
+    
+  }
+  }
+    },
+    right: {value: 10}
+  }; 
+  render(tree)
+  `);
   //   () => {
   //   const codeJSON = localStorage.getItem("code");
   //   if (codeJSON != undefined) {
@@ -36,10 +52,10 @@ const CodeEditor = () => {
   useEffect(() => {
     (async () => {
       const res = await Promise.all([
-        fetch("https://algoscribex.netlify.app/style.css"),
-        fetch("https://algoscribex.netlify.app/style.lib.css"),
-        fetch("https://algoscribex.netlify.app/update.js"),
-        fetch("https://algoscribex.netlify.app/watch.js"),
+        fetch("http://localhost:3000/style.css"),
+        fetch("http://localhost:3000/style.lib.css"),
+        fetch("http://localhost:3000/update.js"),
+        fetch("http://localhost:3000/watch.js"),
       ]);
       const datas = await Promise.all(res.map((r) => r.text()));
       setHelperScripts(datas);
@@ -70,7 +86,22 @@ const CodeEditor = () => {
       const res = await fetch(file);
       const data = await res.text();
       console.log({ data });
-      setScript(data);
+      setScript(`
+      const tree = {
+        value: 30,
+        left: {
+          value: 11,
+        left: {
+      value: 30,
+      left: {
+        value: 11
+        
+      }
+      }
+        },
+        right: {value: 10}
+      }; 
+      render(tree)`);
     })();
   }, [file]);
 

@@ -44,6 +44,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  min-width: 3rem;
 }
 
 @keyframes popin {
@@ -64,6 +65,7 @@ body {
 .value {
   /* scale: 0.5; */
   width: 3rem;
+  min-width: 3rem;
   height: 3rem;
   font-size: 1.5rem;
   display: flex;
@@ -106,11 +108,11 @@ body {
 
 .children {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* grid-template-columns: max-content max-content; */
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: min-content min-content;
   grid-template-areas: "leftNode rightNode";
-  gap: 1.5rem;
-  /* place-items: center; */
+  gap: 3rem;
+  place-items: center;
 
   align-items: start;
   place-content: center;
@@ -121,14 +123,19 @@ body {
 
 .left {
   grid-area: leftNode;
+  /* min-width: 3rem; */
 }
 
 .right {
   grid-area: rightNode;
+  /* min-width: 3rem; */
 }
 
-/* .left,
+.left,
   .right {
     min-width: 3rem;
     min-height: 3rem;
-  } */
+
+    /* width: min-content;
+    height: min-content; */
+  }
